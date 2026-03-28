@@ -1,0 +1,307 @@
+* {
+	position: relative;
+}
+
+html,
+body {
+	background-color: black;
+	color: white;
+	overflow: hidden scroll;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+main,
+#content {
+	width: 100%;
+}
+
+hr {
+	width: 95%;
+	margin-top: 1%;
+}
+
+h1 {
+	margin: 1%;
+	user-select: none;
+}
+
+a {
+	color: rgb(0, 208, 255);
+}
+
+span {
+	border-style: solid;
+	border-radius: 15px;
+	border-color: rgb(85, 85, 85);
+	padding: 0.35% 2%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a:visited {
+	color: rgb(0, 170, 255);
+}
+
+#game-title {
+	text-align: center;
+}
+
+#game-field {
+	margin: 2vh auto;
+	user-select: none;
+	background-color: rgb(85, 85, 85);
+	width: 37%;
+	min-width: 400px;
+	aspect-ratio: 8/7;
+}
+
+.row {
+	display: flex;
+	height: 14.2%;
+}
+
+.column {
+	margin-left: 1%;
+	margin-top: 0.5%;
+	width: 11.4%;
+	aspect-ratio: 1/1;
+	background-color: rgb(10, 10, 10);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.column:hover {
+	background-color: rgb(20, 20, 20);
+}
+
+#notif {
+	color: red;
+	font-size: 2em;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	margin-top: 1%;
+}
+
+#keys {
+	position: absolute;
+	z-index: 10;
+	width: 20%;
+	min-width: 250px;
+	min-height: 250px;
+	height: 40%;
+	margin: 0 auto;
+	top: 17%;
+	background-color: black;
+	border-style: solid;
+	border-color: rgb(85, 85, 85);
+	border-radius: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+}
+
+#keys > p {
+	margin-left: 5%;
+	margin-top: -1%;
+}
+
+#keys > button {
+	left: 32%;
+	top: 2%;
+	width: 35%;
+	height: 14%;
+	border-radius: 12px;
+	color: white;
+	background-color: rgb(70, 70, 70);
+	font-size: 0.95em;
+}
+
+#keys > button:hover {
+	background-color: rgb(85, 85, 85);
+}
+
+@keyframes slide-in-top {
+	from {
+		transform: translate(-50%, -100%);
+	}
+	to {
+		transform: translate(-50%, 0%);
+	}
+}
+
+@keyframes slide-out-top {
+	from {
+		transform: translate(-50%, 0%);
+		opacity: 1;
+	}
+	to {
+		transform: translate(-50%, -200%);
+		opacity: 0;
+	}
+}
+
+@keyframes spin-right {
+	to {
+		opacity: 1;
+		transform: rotateY(360deg);
+	}
+}
+
+.slide-in {
+	display: block;
+	animation: slide-in-top 0.4s;
+}
+
+.slide-out {
+	display: block;
+	animation: slide-out-top 0.4s ease-out;
+}
+
+#mute {
+	all: unset;
+	cursor: pointer;
+	position: absolute;
+	width: 2.5%;
+	aspect-ratio: 1/1;
+	right: 1%;
+	top: 0.3%;
+	min-width: 35px;
+	transform: translateX(-115%);
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(85, 85, 85);
+	border-radius: 15px;
+	z-index: 12;
+	background-image: url(images/misc/sound-on.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#mute:hover {
+	background-size: 110%;
+}
+
+#config {
+	all: unset;
+	cursor: pointer;
+	position: absolute;
+	width: 2.5%;
+	aspect-ratio: 1/1;
+	right: 1%;
+	top: 0.3%;
+	min-width: 35px;
+	background-image: url(images/misc/config-gear.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(85, 85, 85);
+	border-radius: 50%;
+	z-index: 12;
+	overflow: hidden;
+}
+
+#config:hover {
+	background-image: url(images/misc/config-gear-hover.png);
+	border-color: rgb(140, 140, 140);
+	background-size: 110%;
+	animation: girarY 60s infinite forwards ease-out;
+}
+
+@keyframes girarY {
+	from {
+		transform: rotateZ(0deg);
+	}
+	to {
+		transform: rotateZ(3600deg);
+	}
+}
+
+#config:active {
+	background-image: url(images/misc/config-gear-active.png);
+	animation: girarY 15s infinite ease-out;
+}
+
+#config-menu {
+	position: absolute;
+	z-index: 10;
+	width: 30%;
+	min-width: 325px;
+	min-height: 375px;
+	height: 60%;
+	margin: 0 auto;
+	top: 12%;
+	background-color: black;
+	border-style: solid;
+	border-color: rgb(85, 85, 85);
+	border-radius: 15px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+}
+
+#config-menu > p {
+	margin-left: 3%;
+	margin-top: -1%;
+}
+
+#git-logo {
+	width: 40%;
+	top: -35%;
+	position: absolute;
+}
+
+#mode-changer-btn {
+	position: relative;
+	color: white;
+	background-color: gray;
+	text-align: center;
+	width: 25%;
+	max-width: 90px;
+	border-radius: 10px;
+}
+
+#config-menu > button {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 88%;
+	width: 20%;
+	height: 10%;
+	border-radius: 12px;
+	color: white;
+	background-color: rgb(70, 70, 70);
+	font-size: 0.95em;
+}
+
+#config-menu > button:hover {
+	background-color: rgb(85, 85, 85);
+}
+
+#mode-changer-text {
+	display: none;
+	margin: 0.4%;
+	font-size: 1.45em;
+}
+
+#change-mode-btn {
+	color: white;
+	background-color: rgb(45, 45, 45);
+	font-size: 0.8em;
+	border-radius: 8px;
+	width: 16%;
+	max-width: 90px;
+}
+
+#change-mode-btn:hover {
+	background-color: rgb(56, 56, 56);
+}
