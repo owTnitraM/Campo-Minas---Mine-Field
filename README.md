@@ -1,3 +1,3 @@
 # Campo-Minas / Minesweeper (Or Mine Field)
 
-Plau online [here](https://owtnitram.github.io/Campo-Minas---Mine-Field/)!
+Play online [here](https://owtnitram.github.io/Campo-Minas---Mine-Field/)!
